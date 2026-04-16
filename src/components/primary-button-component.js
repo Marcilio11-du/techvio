@@ -17,6 +17,7 @@ class PrimaryButtonComponent extends HTMLElement {
                     padding: 13px 35px;
                     border-radius: 5px;
                     cursor: pointer;
+                    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
                 }
 
             </style>
