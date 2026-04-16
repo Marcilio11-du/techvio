@@ -16,6 +16,7 @@ class ServiceCardComponent extends HTMLElement {
                     padding: 35px 30px;
                     margin: 0px 12px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    align-items: left;
                 }
             </style>
 

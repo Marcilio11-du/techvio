@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechVio</title>
+    <title>TechVio - IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="global.css">
 </head>
 <body>
 
     <header>
-
         <div class="logo">
             <img src="../assets/logo.png" alt="TechVio Logo">
         </div>
 
-        <div class="links">
+        <nav class="links">
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Services</a>
@@ -22,103 +22,92 @@
             <a href="#">Pages</a>
             <a href="#">Blog</a>
             <a href="#">Contact</a>
-        </div>
+        </nav>
 
-        <primary-button-component text="Get it Support"></primary-button-component>
-
+        <primary-button-component text="Get IT Support"></primary-button-component>
     </header>
 
-    <section id="hero-section">
+    <main>
+        
+        <section id="hero-section">
+            <div class="container container-hero">
+                <div id="left-side">
+                    <div class="social-medias">
+                        <ul class="social-icon-list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
 
-        <main>
-            <div id="left-side">
+                    <h1>Best IT Solutions & Business Services for Your Company</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor magna aliqua.</p>
 
-            <div class="social-medias">
-                <ul class="social-icon-list">
-                    <li><a href="#"><i class="fab fa-facebook-f">::before</i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-				</ul>
+                    <div style="margin-top: 30px; display: flex; gap: 15px;">
+                        <secondary-button-component text="Our Services"></secondary-button-component>
+                        <primary-button-component text="Contact Us"></primary-button-component>
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <img src="../assets/home-font.png" alt="Home Illustration">
+                </div>
             </div>
 
-             <h1>Best IT Solutions & Business Services for Your Company</h1>
-             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor magna aliqua ipsum is simply dummy text of the printing.
-             </p>
+            <div class="creative-shape">
+                <img src="../assets/home-bottom-shape.png" alt="Decoration" style="width: 100%;">
+            </div>
+        </section>
 
-             <secondary-button-component text="Our Services"></secondary-button-component>
-             <primary-button-component text="Contact Us"></primary-button-component>
-        
+
+        <section id="services">
+            <div class="container"> <p class="section-subtitle">What we Provide</p>
+                <h2 class="section-title">Our Services</h2>
+
+            <div class="service-grid">
+                <service-card src="../assets/service1.png" title="Web Development"></service-card>
+                <service-card src="../assets/service2.png" title="Digital Marketing"></service-card>
+                <service-card src="../assets/service3.png" title="Startup Solutions"></service-card>
+                <service-card src="../assets/service1.png" title="Networking Services"></service-card>
+                <service-card src="../assets/service2.png" title="SEO Optimization"></service-card>
+                <service-card src="../assets/service3.png" title="Apps Development"></service-card>
+            </div>
+    </div>
+        </section>
+
+
+        <section id="about-section">
+            <div class="about-info">
+                <p style="color: var(--secondary-color); font-weight: bold;">About our Company</p>
+                <h2>Providing Your Business With A Quality IT Service is Our Passion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+
+                <div class="skills" style="margin: 30px 0;">
+                    <skill-item text="IT Consulting" data-value="90%" style="width: 90%;"></skill-item>
+                    <skill-item text="Cloud Consulting" data-value="75%" style="width: 75%;"></skill-item>
+                    <skill-item text="Managed IT Services" data-value="85%" style="width: 85%;"></skill-item>
+                </div>
+
+                <primary-button-component text="Learn More"></primary-button-component>
             </div>
 
             <div class="right-side">
-                <img src="../assets/home-font.png" alt="Home Font">
-            </div>
-        </main>
-
-        <img src="../assets/home-bottom-shape.png" alt="Home bottom decorative shape">
-
-    </section>
-
-    <!-- Service Section -->
-    <section id="services">
-        <p>What we Provide</p>
-        <h2>Our Services</h2>
-
-       <div class="service-cards">
-
-        <div class="set-card">
-            <service-card src="../assets/service1.png" title="Web Development"></service-card>
-            <service-card src="../assets/service2.png" title="Digital Marketing"></service-card>
-            <service-card src="../assets/service3.png" title="Startup Solutions"></service-card>
-        </div>
-        <br>
-        <div class="set-card">
-            <service-card src="../assets/service1.png" title="Networking Services"></service-card>
-            <service-card src="../assets/service2.png" title="SEO Optimization"></service-card>
-            <service-card src="../assets/service3.png" title="Apps Development"></service-card>
-        </div>
-       </div>
-
-    </section>
-
-    <!-- About Section -->
-
-    <section id="about-section">
-
-        <div class="about-info">
-
-            <p>About our Company</p>
-            <h2>Providing Your Business With A Quality IT Service is Our Passion</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim</p>
-
-            <div class="skills">
-                <skill-item text="IT Consulting" data-value="90%" style="width: 90%;"></skill-item>
-                <skill-item text="Cloud Consulting" data-value="75%" style="width: 75%;"></skill-item>
-                <skill-item text="Managed IT Services" data-value="85%" style="width: 85%;"></skill-item>
-            </div>
-
-            <primary-button-component text="Learn More"></primary-button-component>
-
-        </div>
-
-        <div class="right-side">
-            <div class="about-img">
-                <img src="../assets/about.jpg" alt="About Us Image">
-                <div class="experience-years-design">
-                    <h5>24</h5>
-                    <p>Years of Experience</p>
+                <div class="about-img">
+                    <img src="../assets/about.jpg" alt="About Us">
+                    <div class="experience-years-design">
+                        <h5>24</h5>
+                        <p>Years of Experience</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-    </section>
-
-    <!-- Choose-Trust Section -->
+        <!-- Choose-Trust Section -->
     <section class="choose-trust">
 
-        <div class="choose-section">
+        <div class="container">
+            <div class="choose-section">
             <div class="img">
                 <img src="../assets/choose-1.png" alt="">
             </div>
@@ -155,48 +144,53 @@
             </div>
 
         </div>
+        </div>
 
     </section>
 
+        <section id="portfolio">
+            <div class="container">
+                <h6 style="color: var(--secondary-color);">RECENT WORK</h6>
+                <h2>Our Portfolio</h2>
 
-    <!-- Portfolio Section -->
-     
-    <section id="portolio">
-        <h6>RECENT WORK</h6>
-        <h2>Our Portfolio</h2>
+                <div class="portfolio-filters" style="margin-bottom: 30px; display: flex; gap: 10px; justify-content: center;">
+                    <secondary-button-component text="All"></secondary-button-component>
+                    <secondary-button-component text="Branding"></secondary-button-component>
+                    <secondary-button-component text="Application"></secondary-button-component>
+                    <secondary-button-component text="Web Design"></secondary-button-component>
+                    <secondary-button-component text="Photography"></secondary-button-component>
+                </div>
 
-        <secondary-button-component text="All Projects"></secondary-button-component>
-        <secondary-button-component text="Branding"></secondary-button-component>
-        <secondary-button-component text="Application"></secondary-button-component>
-        <secondary-button-component text="Web Design"></secondary-button-component>
-        <secondary-button-component text="Photography"></secondary-button-component>
-
-        <figure>
-            <div class="folio-img">
-                <img src="" alt="">
+                <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                    <div class="folio-img" style="background: #ddd; height: 250px; border-radius: 8px;">
+                        
+                    </div>
+                </div>
             </div>
-            <div class="folio-img"></div>
-            <div class="folio-img"></div>
-            <div class="folio-img"></div>
-            <div class="folio-img"></div>
-            <div class="folio-img"></div>
-        </figure>
-    </section>
+        </section>
 
-    <section id="achievments">
-
-    </section>
-
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-
-    </section>
-
-    <section id="team-project">
-
-
-    </section>
+    </main>
 
     <script src="./components/primary-button-component.js"></script>
     <script src="./components/secondary-button-component.js"></script>

@@ -9,7 +9,6 @@ class SpecificServiceComponent extends HTMLElement {
             <style>
                 .specific-service {
                         background-color: #ffffff;
-                        padding: 5px;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                         border-radius: 8px;
                         width: 100%;
