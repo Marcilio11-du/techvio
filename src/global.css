@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 /* 
     VARIÁVEIS E CONFIGURAÇÕES GERAIS*/
@@ -219,4 +220,66 @@ CHOOSE-TRUST SECTION
 
 #portfolio .container .portoflio-grid .folio-img {
     background-image: url('../assets/portfolio-1.jpg');
+}
+/* 
+PARALLAX SECTION
+    */
+
+.parallax-section {
+    background-image: url('../assets/logo-black.png');
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--text-white);
+}
+
+.parallax-section .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parallax-section .container h3 {
+    font-size: 50px; 
+}
+
+.parallax-section .container p {
+    font-size: 18px;
+
+}
+
+/* 
+TESTIMONIAL SECTION
+    */
+
+.testimonial {  
+    background-color: var(--text-white);
+    text-align: center;
+    padding: 60px 0;
+} 
+.testimonial h2 {
+    margin-bottom: 20px;
+}
+
+testimonial-card {
+    display: block;
+    width: 100%;
+}
+
+
+.carousel-item .col-md-4 {
+    padding: 15px;
+}
+.carousel-item {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+.carousel-inner {
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
