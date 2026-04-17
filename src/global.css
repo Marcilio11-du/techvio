@@ -44,15 +44,6 @@ body {
     margin-left: auto;
 }
 
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-}
 
 section {
     width: 100%;
@@ -321,10 +312,53 @@ testimonial-card {
     z-index: 1;
     border-radius: 5px;
     overflow: hidden;
+    width: 100%;
+    height: auto;
+    
 }
 
 .team-info {
     text-align: center;
     padding: 20px 15px 0px;
     transition: .5s;
+}
+
+.team-social-icon {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.team-social-icon a {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0;
+    visibility: hidden;
+    display: inline-block;
+    transform: scale(0);
+    will-change: transform;
+    border-radius: 8px;
+    margin: 0px 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    transition: 0.3s;
+}
+
+.fab {
+    font-weight: 400;
+    font-family: "Font Awesome 6 Brands";
+}
+
+single-team-box .team-image img {
+    width: 100%;
+    height: auto;
+    transition: 0.5s;
 }
