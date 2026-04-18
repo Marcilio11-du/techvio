@@ -840,3 +840,41 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* 
+    COPYRIGHT SECTION
+     */
+
+.copyright-area {
+    padding: 35px 0;
+    background-color: #042c4c;
+    border-top: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.copyright-area p {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.far {
+    font-weight: 400;
+}
+
+.copyright-area ul {
+    padding-left: 0;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.copyright-area ul li {
+    position: relative;
+    color: #ececec;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.copyright-area ul li a {
+    color: #ffffff;
+    display: inline-block;
+}
