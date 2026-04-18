@@ -85,6 +85,66 @@ p {
     background-color: var(--bg-light);
 }
 
+.default-btn {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #7b68ee;
+    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+    margin-top: 5px;
+    transition: 0.4s;
+    border: none;
+}
+
+.default-btn-one {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: #7b68ee;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: #ffffff;
+    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+    transition: 0.4s;
+    border: none;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
 /* 
    HEADER (Navegação)
     */
@@ -509,4 +569,77 @@ single-team-box .team-image img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+/*
+    HIRE SECTION
+*/
+
+.hire-section {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background-image: url(../assets/client-8.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 70px 0px;
+    background-position: center center;
+}
+
+.hire-content h2 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hire-content p {
+    color: #fff;
+    margin: 20px 0 0 0;
+}
+
+
+
+/*
+    CONTACT SECTION
+*/
+
+contact-section.home-1-contact-section {
+    background-image: url(../assets/map-image.png);
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.contact-section {
+    position: relative;
+    z-index: 1;
+    background: url(../img/dot-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.contact-section.home-1-contact-section .home-contact-img {
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 30px;
+}
+
+.contact-section.home-1-contact-section .form-control {
+    background-color: transparent;
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #cacaca;
+    border-left: 2px solid #7b68ee;
+    box-shadow: none;
+}
+
+.contact-section.home-1-contact-section .contact-form form textarea.form-control {
+    height: auto;
+    padding-top: 15px;
+    line-height: initial;
 }
