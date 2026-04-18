@@ -72,6 +72,19 @@ p {
     font-family: Catamaran, sans-serif;
 }
 
+.sub-title {
+    color: rgb(255, 152, 0);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.bg-grey {
+    background-color: var(--bg-light);
+}
+
 /* 
    HEADER (Navegação)
     */
@@ -385,9 +398,6 @@ single-team-box .team-image img {
     BLOG & ARTICLES SECTION
 */
 
-.blog-section {
-    background-color: var(--bg-light);
-}
 
 .section-title {
     text-align: center;
@@ -442,4 +452,61 @@ single-team-box .team-image img {
     top: 0px;
     color: rgb(123, 104, 238) !important;
     margin-right: 3px;
+}
+
+/*
+    PARTNERS SECTION
+*/
+
+.partner-title {
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 65px;
+}
+.partner-title h2 {
+    color: rgb(64, 64, 64);
+    font-size: 40px;
+    font-weight: 800;
+    margin: 10px 0px 0px;
+}
+
+.partner-section {
+    background-color: var(--text-white);
+}
+
+
+
+.partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.partner-list .partner-item {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.partner-list .partner-item a {
+    position: relative;
+    display: flex;           
+    align-items: center;     
+    justify-content: center;  
+    
+    
+    width: 250px;
+    height: 130px;
+    
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(237, 237, 237);
+}
+
+.partner-list .partner-item a img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
