@@ -878,3 +878,41 @@ img {
     color: #ffffff;
     display: inline-block;
 }
+
+
+/*
+    GO TOP SECTION
+*/
+
+.go-top.active {
+    top: 98%;
+    transform: translateY(-98%);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.go-top {
+    color: #ffffff;
+    position: fixed;
+    z-index: 4;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    background-color: #7b68ee;
+    transition: .9s;
+    cursor: pointer;
+}
+
+.go-top i {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    transition: 0.4s;
+    margin: 0 auto;
+}
