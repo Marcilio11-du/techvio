@@ -828,7 +828,7 @@ img {
     padding: 0 30px;
     border-radius: 0px 5px 5px 0px;
     text-transform: capitalize;
-    background-color: #7b68ee;
+    background-color: mediumslateblue;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border: none;
@@ -915,4 +915,71 @@ img {
     transform: translateY(-50%);
     transition: 0.4s;
     margin: 0 auto;
+}
+
+
+
+/*
+    PRELOADER
+     */
+*/
+.preloader.preloader-deactivate {
+    visibility: hidden;
+}
+
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: transparent;
+}
+
+.preloader.preloader-deactivate .loader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader .loader {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    -webkit-transform: translateY(-43%);
+    transform: translateY(-43%);
+    text-align: center;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    margin: 0 auto;
+}
+
+
+
+.preloader .loader .shadow {
+    position: absolute;
+    top: 59px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    opacity: 0.1;
+    border-radius: 50%;
+    background-color: #000000;
+    -webkit-animation: shadow .5s linear infinite;
+    animation: shadow .5s linear infinite;
+}
+
+.preloader .loader .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    animation: animate .5s linear infinite;
 }
