@@ -1,0 +1,63 @@
+.about-area {
+    background-color: #f7f8f9;
+}
+
+.about-image {
+    position: relative;
+    max-width: 100%; 
+    margin-left: 0px;
+    display: inline-block;
+}
+
+.about-image img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-image .years-design {
+    position: absolute;
+    
+    bottom: 30px;
+    right: -20px; 
+    width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    border-bottom: 3px solid #ff9800;
+    text-align: center;
+    z-index: 2;
+}
+
+
+.about-image .years-design h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    color: #404040; 
+}
+
+.about-image .years-design h5 {
+    color: #ff9800;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 991px) {
+    .about-image {
+        margin-top: 50px;
+        text-align: center;
+    }
+    .about-image .years-design {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: -20px;
+    }
+}

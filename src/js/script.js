@@ -9,6 +9,8 @@ function handleNavbarScroll() {
 }
 
 window.addEventListener('scroll', handleNavbarScroll, () => {
+    
+    //Efeito de Rotação dos Ícones dos Cards de Serviços
     const icons = document.querySelectorAll('service-card');
 
     icons.forEach(card => {
@@ -51,10 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             retina_detect: true
         });
-
-
-        //Efeito de Rotação dos Ícones dos Cards de Serviços
-
     }
 
     // Efeito Tilt na Imagem da Hero Section

@@ -1,64 +1,68 @@
 class SkillItemComponent extends HTMLElement {
     constructor() {
         super();
-
-        const text = this.getAttribute('text');
-        const style = this.getAttribute('style');
-        const percentageProgress = this.getAttribute('data-value')
-
         this.attachShadow({ mode: 'open' });
+        
+        const text = this.getAttribute('text') || 'Skill';
+        const percentage = this.getAttribute('percentage') || '0%';
 
         this.shadowRoot.innerHTML = `
             <style>
+                @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+                
                 .skill-item {
-                    margin-bottom: 20px;
-
-                    h6 {
-                        position: relative;
-                        z-index: 4;
-                        font-size: 16px;
-                        font-weight: 600;
-                        text-transform: capitalize;
-                        margin-bottom: 10px;
-
-                        em {
-                            float: right;
-                            font-size: 15px;
-                            font-style: normal;
-                        }
-                    }
-
-                    .skill-progress {
-                        position: relative;
-                        height: 8px;
-                        border-radius: 5px;
-                        background-color: #ddddff;
-                        
-                        .progress {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 100%;
-                            border-radius: 5px;
-                            background-color: #3E57D0;
-                            width: 0;
-                            animation: progressAnimation 2s ease-out forwards;
-                        }
-                    }
+                    margin-bottom: 25px;
+                    font-family: 'Dosis', sans-serif;
+                }
+                h6 {
+                    font-size: 17px;
+                    font-weight: 600;
+                    margin-bottom: 12px;
+                    color: #404040;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .skill-progress {
+                    height: 8px;
+                    width: 100%;
+                    background-color: #ddddff;
+                    border-radius: 5px;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .progress-bar {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    background-color: #7b68ee;
+                    border-radius: 5px;
+                    width: 0; /* Começa em 0 */
+                    transition: width 1.2s cubic-bezier(0.1, 0.5, 0.5, 1);
                 }
             </style>
-
             <div class="skill-item">
-                <h6>
-                 ${text} 
-                 <em>${percentageProgress}</em>
-                </h6>
+                <h6>${text} <span>${percentage}</span></h6>
                 <div class="skill-progress">
-                    <div class="progress" data_value="${percentageProgress}" style="${style}"></div>
+                    <div class="progress-bar"></div>
                 </div>
             </div>
         `;
     }
-}
 
+    connectedCallback() {
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = this.shadowRoot.querySelector('.progress-bar');
+                    bar.style.width = this.getAttribute('percentage');
+                    observer.unobserve(this); 
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(this);
+    }
+}
 customElements.define('skill-item', SkillItemComponent);
