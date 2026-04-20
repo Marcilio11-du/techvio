@@ -6,7 +6,6 @@
     position: relative;
     max-width: 100%; 
     margin-left: 0px;
-    display: inline-block;
 }
 
 .about-image img {
@@ -17,18 +16,18 @@
 }
 
 .about-image .years-design {
+
     position: absolute;
-    
-    bottom: 30px;
-    right: -20px; 
-    width: 200px;
+    right: 0;
+    max-width: 250px;
     background-color: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 5px;
     border-bottom: 3px solid #ff9800;
     text-align: center;
-    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -59,5 +58,12 @@
         left: 0;
         margin: 0 auto;
         bottom: -20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .about-image .years-design {
+        left: 75px;
+        bottom: 25px;
     }
 }

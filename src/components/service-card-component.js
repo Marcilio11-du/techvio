@@ -32,12 +32,14 @@ class ServiceCardComponent extends HTMLElement {
                     width: 70px;
                     height: 70px;
                     line-height: 70px;
+                    align-items: left;
                     background-color: #fff4f0; 
                     color: #ff6a28; 
                     font-size: 35px;
                     margin: 0 auto 20px;
                     border-radius: 5px;
                     transition: 0.5s;
+                    align-items: left;
                 }
 
                 
