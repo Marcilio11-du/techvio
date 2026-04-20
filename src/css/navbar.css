@@ -1,27 +1,46 @@
-/* --- VARIÁVEIS E BASE --- */
+/* --- CONFIGURAÇÃO DE FONTE --- */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap');
+
 :root {
     --techvio-main: #7b68ee; 
     --techvio-dark: #404040;
+    --font-primary: 'Dosis', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
 }
 
 .navbar {
     padding: 20px 0;
     transition: all 0.4s ease-in-out;
-    background-color: #ffffff;
+    background-color: transparent !important;
+    font-family: var(--font-primary);
+}
+
+.navbar.sticky-active {
+    background-color: #ffffff !important;
+    padding: 15px 0 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* --- ALINHAMENTO DOS LINKS --- */
 .navbar-nav {
-    text-align: center; /* Centralizado no Desktop */
+    text-align: center;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--techvio-dark);
+    color: #ffffff; /* Branco sobre o gradiente */
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     padding: 10px 15px;
     transition: 0.3s;
     display: inline-block;
+}
+
+/* Cor do texto quando o menu fica branco */
+.navbar.sticky-active .navbar-nav .nav-link {
+    color: var(--techvio-dark) !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover, 
@@ -70,65 +89,18 @@
     }
 }
 
-.dropdown-item {
-    font-weight: 500;
-    padding: 10px 20px;
-    transition: 0.3s;
-}
-
-.dropdown-item:hover {
-    background-color: var(--techvio-main);
-    color: #ffffff !important;
-}
-
 /* --- MENU RESPONSIVO (MOBILE) --- */
 @media (max-width: 991px) {
-    .navbar-nav {
-        text-align: left; /* Texto à esquerda */
-    }
-
-    .navbar-nav .nav-item {
-        border-bottom: 1px solid #f0f0f0;
-        position: relative;
-    }
-
+    .navbar-nav { text-align: left; }
+    .navbar-nav .nav-item { border-bottom: 1px solid #f0f0f0; position: relative; }
     .navbar-nav .nav-link {
+        color: var(--techvio-dark) !important; /* No mobile geralmente o fundo expandido é branco */
         padding: 15px 0 !important;
         width: 100%;
-        display: flex; /* Habilita Flexbox */
-        justify-content: space-between; /* Empurra o texto para esquerda e o '+' para direita */
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
-
-    /* Sinal de "+" no extremo direito */
-    .dropdown-toggle::after {
-        content: '+';
-        border: none;
-        font-size: 22px;
-        font-weight: 400;
-        margin-left: auto; /* Garante que ele seja empurrado ao máximo */
-    }
-
-    .dropdown-menu {
-        border: none;
-        background-color: #fafafa;
-        padding-left: 20px;
-        display: none;
-    }
-
-    .dropdown-menu.show {
-        display: block;
-    }
-    
-    .other-options {
-        margin-top: 20px;
-        justify-content: center;
-        display: flex;
-    }
-}
-
-/* --- ESTADOS AUXILIARES --- */
-.sticky-active {
-    padding: 10px 0 !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+    .navbar-collapse { background: #fff; padding: 10px 20px; }
+    .dropdown-toggle::after { content: '+'; border: none; font-size: 22px; margin-left: auto; }
 }
