@@ -8,9 +8,24 @@ function handleNavbarScroll() {
     }
 }
 
-window.addEventListener('scroll', handleNavbarScroll);
+window.addEventListener('scroll', handleNavbarScroll, () => {
+    const icons = document.querySelectorAll('service-card');
 
-// 2. Inicialização Geral
+    icons.forEach(card => {
+        const shadow  = card.shadowRoot;
+
+        if(shadow) {
+            const iconDiv = shadow.querySelector('.services-icon');
+
+            const rotation = (window.scrollY / 10) % 360;
+
+            iconDiv.style.transform = rotate(${rotation}deg);
+        }
+    
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // Partículas (Densidade média: 50)
@@ -36,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             retina_detect: true
         });
+
+
+        //Efeito de Rotação dos Ícones dos Cards de Serviços
+
     }
 
     // Efeito Tilt na Imagem da Hero Section
