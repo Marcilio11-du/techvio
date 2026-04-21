@@ -12,8 +12,11 @@ class PartnerItem extends HTMLElement {
             <style>
                 :host {
                     display: block;
-                    flex: 1 0 20%; /* Ajusta para cerca de 5 logos por linha em desktop */
-                    padding: 0 10px;
+                    /* Desktop: 5 itens por linha (100 / 5 = 20%) */
+                    /* Usamos flex-grow: 0 para ele não esticar e ocupar a linha toda */
+                    flex: 0 0 20%; 
+                    padding: 0 15px;
+                    box-sizing: border-box;
                 }
 
                 .partner-item a {
@@ -21,17 +24,19 @@ class PartnerItem extends HTMLElement {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 25px 20px;
+                    height: 120px; /* Altura fixa para alinhar as bordas */
                     border-radius: 10px;
                     border: 2px solid #ededed;
                     margin-bottom: 30px;
                     transition: all 0.4s ease-in-out;
                     background: #fff;
+                    text-decoration: none;
                 }
 
                 .partner-item img {
-                    max-width: 140px;
-                    height: auto;
+                    max-width: 120px;
+                    max-height: 60px;
+                    object-fit: contain;
                     filter: grayscale(100%);
                     opacity: 0.6;
                     transition: all 0.4s ease-in-out;
@@ -46,14 +51,16 @@ class PartnerItem extends HTMLElement {
                 .partner-item a:hover img {
                     filter: grayscale(0%);
                     opacity: 1;
-                    transform: scale(1.05);
                 }
 
+                /* Tablet: 3 itens por linha */
                 @media (max-width: 991px) {
-                    :host { flex: 1 0 33.33%; }
+                    :host { flex: 0 0 33.33%; }
                 }
+
+                /* Mobile: 2 itens por linha (ou 1 se preferires 100%) */
                 @media (max-width: 575px) {
-                    :host { flex: 1 0 50%; }
+                    :host { flex: 0 0 50%; }
                 }
             </style>
             <div class="partner-item">
