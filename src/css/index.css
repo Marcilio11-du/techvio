@@ -177,3 +177,37 @@ p {
     display: block;
     transition: transform 0.5s ease;
 }
+
+
+.counter-area {
+    font-family: 'Dosis', sans-serif;
+    position: relative;
+    z-index: 1;
+    padding: 120px 0;
+    text-align: center;
+    background-image: url('../../assets/banner-bg-3.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.counter-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.counter-area.counter-bg-3 {
+    background-image: url('../../assets/banner-bg-3.jpg');
+}
+
+.counter-grid-item {
+    margin-bottom: 30px;
+}

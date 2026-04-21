@@ -10,7 +10,6 @@ window.addEventListener('scroll', handleNavbarScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    
     if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
         particlesJS("particles-js", {
             particles: {
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
     const bannerImg = document.querySelector(".banner-image");
     if (bannerImg && typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(bannerImg, {
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            
             const currentActive = document.querySelector('.filter-active');
             if (currentActive) currentActive.classList.remove('filter-active');
             button.classList.add('filter-active');
@@ -61,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             portfolioItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
-                
-                
                 if (filterValue === 'all' || itemCategory === filterValue) {
                     item.classList.remove('hide');
                 } else {
@@ -71,6 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Lógica dos Contadores (Intersection Observer)
+    const counterSection = document.querySelector('#counters');
+    const counters = document.querySelectorAll('counter-item');
+    let started = false;
+
+    if (counterSection && counters.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !started) {
+                    counters.forEach(c => {
+                        if (typeof c.startCounting === 'function') {
+                            c.startCounting();
+                        }
+                    });
+                    started = true;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(counterSection);
+    }
 
     handleNavbarScroll();
 });
