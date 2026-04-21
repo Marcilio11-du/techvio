@@ -71,7 +71,6 @@ subscribe-area {
 .footer-social li a:hover i {
     background-color: #7b68ee; 
     color: #fff;               
-    transform: translateY(-5px);
 }
 
 
@@ -134,7 +133,6 @@ subscribe-area {
     position: absolute;
     left: 0;
     top: 5px;
-    color: #7b68ee;
     font-size: 20px;
 }
 
