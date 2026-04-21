@@ -23,7 +23,7 @@ class ServiceCardComponent extends HTMLElement {
                     z-index: 1;
                     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
                     font-family: 'Dosis', sans-serif;
-                    text-align: left; /* Garante alinhamento à esquerda */
+                    text-align: left; 
                 }
 
                 .single-services-item:hover {
@@ -35,18 +35,18 @@ class ServiceCardComponent extends HTMLElement {
                     width: 70px;
                     height: 70px;
                     line-height: 70px;
-                    display: flex; /* Melhor que line-height para alinhar ícones */
+                    display: flex; 
                     align-items: center;
                     justify-content: center;
                     background-color: #fff4f0; 
                     color: #ff6a28; 
                     font-size: 35px;
-                    margin: 0 0 20px 0; /* Removido o 'auto' para alinhar à esquerda */
+                    margin: 0 0 20px 0; 
                     border-radius: 5px;
                     transition: 0.5s;
                 }
 
-                /* O efeito original de girar 3D no Hover */
+                
                 .single-services-item:hover .services-icon {
                     transform: rotateY(180deg);
                     background-color: #ff6a28;
@@ -73,12 +73,13 @@ class ServiceCardComponent extends HTMLElement {
                     text-decoration: none;
                     font-weight: 600;
                     font-size: 15px;
-                    transition: 0.3s;
+                    transition: 0.6s;
                 }
 
-                .read-more:hover {
-                    letter-spacing: 1px;
+                .read-more:hover i {
+                    padding-left: 5px;
                 }
+                
             </style>
 
             <div class="single-services-item">
@@ -89,7 +90,7 @@ class ServiceCardComponent extends HTMLElement {
                 </div>
                 <h3>${title}</h3>
                 <p><slot name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua</slot></p>
-                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right-short"></i></a>
+                <a href="#" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
             </div>
         `;
     }
