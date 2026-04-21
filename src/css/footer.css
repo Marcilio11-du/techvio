@@ -34,9 +34,17 @@
     transition: 0.4s;
 }
 
+.subscribe-content h2 {
+    font-weight: 700;
+}
+
 .newsletter-form button:hover {
-    background-color: #ffb700; /* Laranja no hover */
+    background-color: #ffb700;
     cursor: pointer;
+}
+
+subscribe-area {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.313);
 }
 
 /* --- Social Icons (Inversão de Cores) --- */
@@ -61,12 +69,12 @@
 }
 
 .footer-social li a:hover i {
-    background-color: #7b68ee; /* Inverte: fundo roxo */
-    color: #fff;               /* Inverte: ícone branco */
+    background-color: #7b68ee; 
+    color: #fff;               
     transform: translateY(-5px);
 }
 
-/* --- Quick Links (Roxo + Linha Animada) --- */
+
 .footer-heading h3 {
     font-size: 20px;
     margin-bottom: 25px;
@@ -145,4 +153,10 @@
     font-size: 20px;
     font-weight: 700;
     margin: 0;
+}
+
+.subscribe-content p{
+    color: #ececec;
+    font-size: 16px;
+    font-weight: 400;
 }
