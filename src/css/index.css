@@ -298,3 +298,68 @@ p {
     margin: 0 auto 30px;
     line-height: 1.8;
 }
+
+.copyright-area {
+    padding: 25px 0;
+    background-color: #042c4c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Dosis', sans-serif;
+}
+
+.copyright-area p {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.copyright-area p i {
+    margin-right: 5px;
+}
+
+.copyright-area ul {
+    padding-left: 0;
+    text-align: right;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.copyright-area ul li {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+
+.copyright-area ul li:not(:first-child)::before {
+    content: "|";
+    color: rgba(255, 255, 255, 0.3);
+    margin-right: 15px;
+}
+
+.copyright-area ul li a {
+    color: #ececec;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.copyright-area ul li a:hover {
+    color: #7b68ee;
+}
+
+
+@media (max-width: 767px) {
+    .copyright-area {
+        text-align: center;
+    }
+    .copyright-area ul {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .copyright-area ul li {
+        margin: 0 10px;
+    }
+    .copyright-area ul li:not(:first-child)::before {
+        display: none;
+    }
+}
