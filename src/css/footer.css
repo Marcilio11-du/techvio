@@ -1,8 +1,9 @@
 /* --- Base Container --- */
 .footer-subscribe-wrapper {
-    background-color: #042c4c;
     color: #fff;
     font-family: 'Dosis', sans-serif;
+    background-image: url('../../assets/dot-bg.png');
+    background-color: #042c4c;
 }
 
 .ptb-100 { padding: 100px 0; }
