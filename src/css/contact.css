@@ -1,0 +1,49 @@
+.home-1-contact-section {
+    background-image: url('../../assets/map-image.png');
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.home-contact-img img {
+    border-radius: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Estilização dos Inputs */
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form .form-control {
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    border-left: 3px solid #7b68ee;
+    border-radius: 5px;
+    height: 55px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(218, 225, 232, 0.4);
+}
+
+.contact-form textarea.form-control {
+    height: auto;
+    padding-top: 15px;
+}
+
+/* Efeito de Focus */
+.contact-form .form-control:focus {
+    outline: none;
+    border-color: #7b68ee;
+    box-shadow: 0 8px 25px rgba(123, 104, 238, 0.15);
+    background-color: transparent;
+}
+
+.color-text {
+    color: #7b68ee;
+    font-weight: 600;
+}
