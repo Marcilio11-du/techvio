@@ -1,32 +1,99 @@
-class PrimaryButtonComponent extends HTMLElement {
+class PrimaryButton extends HTMLElement {
     constructor() {
         super();
-
-        const buttonText = this.getAttribute('text') || 'Primary Button'; //Define um valor padrão para o texto do botão
         this.attachShadow({ mode: 'open' });
+    }
 
+    connectedCallback() {
+        const text = this.getAttribute('text') || 'Click Me';
+        const link = this.getAttribute('href') || '#';
+        const type = this.getAttribute('variant') || 'primary'; 
+        
         this.shadowRoot.innerHTML = `
             <style>
-                .primary-button {
-                    background-color: #3E57D0;
+                :host { display: inline-block; }
+                
+                .btn {
+                    position: relative;
+                    z-index: 1;
+                    overflow: hidden;
                     font-size: 16px;
-                    font-weight: bold;
-                    font-family: inherit;
-                    color: white;
-                    border: none;
+                    font-weight: 600;
+                    text-align: center;
                     padding: 13px 35px;
                     border-radius: 5px;
+                    display: inline-block;
+                    text-decoration: none;
+                    border: none;
                     cursor: pointer;
-                    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+                    transition: 0.4s;
+                    font-family: 'Dosis', sans-serif;
+                    box-shadow: 0 7px 25px rgba(123, 104, 238, 0.25);
                 }
 
+                /* Variante Roxa */
+                .primary {
+                    background-color: #7b68ee;
+                    color: #ffffff;
+                }
+
+                /* Variante Branca (Outline) */
+                .outline {
+                    background-color: #ffffff;
+                    color: #7b68ee;
+                }
+
+                .btn span {
+                    position: absolute;
+                    z-index: -1;
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-radius: 50%;
+                    background-color: #3e57d0;
+                    transform: translate(-50%, -50%);
+                    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+                }
+
+                .btn:hover {
+                    color: #fff;
+                }
+
+                .btn:hover span {
+                    width: 562.5px;
+                    height: 562.5px;
+                }
             </style>
+            <a href="${link}" class="btn ${type === 'outline' ? 'outline' : 'primary'}">
+                ${text}
+                <span></span>
+            </a>
+        `;
+
+        this.initAnimation();
+    }
+
+    initAnimation() {
+        const btn = this.shadowRoot.querySelector('.btn');
+        const span = this.shadowRoot.querySelector('span');
+
+        btn.addEventListener('mouseenter', (e) => {
+            const parentOffset = btn.getBoundingClientRect();
+            const relX = e.clientX - parentOffset.left;
+            const relY = e.clientY - parentOffset.top;
             
-            <button class="primary-button">
-                ${buttonText}
-            </button>
-            `;
+            span.style.top = relY + 'px';
+            span.style.left = relX + 'px';
+        });
+
+        btn.addEventListener('mouseout', (e) => {
+            const parentOffset = btn.getBoundingClientRect();
+            const relX = e.clientX - parentOffset.left;
+            const relY = e.clientY - parentOffset.top;
+            
+            span.style.top = relY + 'px';
+            span.style.left = relX + 'px';
+        });
     }
 }
-
-customElements.define('primary-button-component', PrimaryButtonComponent);
+customElements.define('primary-button', PrimaryButton);
