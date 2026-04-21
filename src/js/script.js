@@ -106,5 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Lógica para o botão Go Top
+    const goTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            goTopBtn.classList.add('active');
+        } else {
+            goTopBtn.classList.remove('active');
+        }
+    });
+
+    goTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     handleNavbarScroll();
 });
