@@ -89,5 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(counterSection);
     }
 
+    if ($('.testimonial-slider').length) {
+        $('.testimonial-slider').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            smartSpeed: 1000, 
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+    }
+
     handleNavbarScroll();
 });

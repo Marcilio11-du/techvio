@@ -217,3 +217,26 @@ p {
 .counter-grid-item {
     margin-bottom: 30px;
 }
+
+
+
+.testimonial-slider {
+    padding: 20px 0;
+}
+
+
+.testimonial-slider.owl-theme .owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd; 
+    margin: 5px 7px;
+    transition: 0.4s;
+}
+
+.testimonial-slider.owl-theme .owl-dots .owl-dot.active span {
+    background-color: #7b68ee; 
+    width: 25px; 
+}
+
+
+
