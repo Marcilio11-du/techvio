@@ -1,0 +1,148 @@
+/* --- Base Container --- */
+.footer-subscribe-wrapper {
+    background-color: #042c4c;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+}
+
+.ptb-100 { padding: 100px 0; }
+
+/* --- Newsletter (Botão Laranja no Hover) --- */
+.newsletter-form {
+    position: relative;
+}
+
+.newsletter-form .input-newsletter {
+    height: 55px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: none;
+    width: 100%;
+}
+
+.newsletter-form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 55px;
+    background-color: #7b68ee;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 0 25px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffb700; /* Laranja no hover */
+    cursor: pointer;
+}
+
+/* --- Social Icons (Inversão de Cores) --- */
+.footer-social {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-social i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    color: #7b68ee;
+    border-radius: 5px;
+    transition: 0.4s;
+    font-size: 18px;
+}
+
+.footer-social li a:hover i {
+    background-color: #7b68ee; /* Inverte: fundo roxo */
+    color: #fff;               /* Inverte: ícone branco */
+    transform: translateY(-5px);
+}
+
+/* --- Quick Links (Roxo + Linha Animada) --- */
+.footer-heading h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-quick-links li {
+    margin-bottom: 12px;
+}
+
+.footer-quick-links li a {
+    color: #ececec;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.footer-quick-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #7b68ee;
+    transition: width 0.3s ease-in-out;
+}
+
+.footer-quick-links li a:hover {
+    color: #7b68ee;
+}
+
+.footer-quick-links li a:hover::after {
+    width: 100%;
+}
+
+.single-footer-widget p {
+    color: #ececec;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* --- Contact Info --- */
+.footer-info-contact {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 25px;
+}
+
+.footer-info-contact i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #7b68ee;
+    font-size: 20px;
+}
+
+.footer-info-contact h3 {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+
+.footer-info-contact span a {
+    color: #ececec;
+    text-decoration: none;
+}
+
+.single-footer-widget .footer-heading h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
