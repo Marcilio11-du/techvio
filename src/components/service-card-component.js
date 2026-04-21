@@ -21,6 +21,7 @@ class ServiceCardComponent extends HTMLElement {
                     z-index: 1;
                     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
                     font-family: 'Dosis', sans-serif;
+                    text-align: left; /* Garante alinhamento à esquerda */
                 }
 
                 .single-services-item:hover {
@@ -32,17 +33,18 @@ class ServiceCardComponent extends HTMLElement {
                     width: 70px;
                     height: 70px;
                     line-height: 70px;
-                    align-items: left;
+                    display: flex; /* Melhor que line-height para alinhar ícones */
+                    align-items: center;
+                    justify-content: center;
                     background-color: #fff4f0; 
                     color: #ff6a28; 
                     font-size: 35px;
-                    margin: 0 auto 20px;
+                    margin: 0 0 20px 0; /* Removido o 'auto' para alinhar à esquerda */
                     border-radius: 5px;
                     transition: 0.5s;
-                    align-items: left;
                 }
 
-                
+                /* O efeito original de girar 3D no Hover */
                 .single-services-item:hover .services-icon {
                     transform: rotateY(180deg);
                     background-color: #ff6a28;

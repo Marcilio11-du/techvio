@@ -16,16 +16,17 @@ class PortfolioOverlay extends HTMLElement {
                     z-index: 2;
                     left: 10px;
                     right: 10px;
-                    bottom: -100px; 
+                    bottom: -20px;
                     padding: 15px 20px;
                     border-radius: 5px;
                     background-color: #ffffff;
                     opacity: 0;
                     visibility: hidden;
-                    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    box-sizing: border-box;
                 }
 
                 :host-context(.portfolio-item:hover) {
@@ -34,29 +35,26 @@ class PortfolioOverlay extends HTMLElement {
                     visibility: visible;
                 }
 
-                .info {
-                    overflow: hidden;
-                    flex: 1;
-                }
+                .info { overflow: hidden; flex: 1; }
 
                 p {
                     color: #7b68ee;
                     font-size: 14px;
                     font-weight: 700;
                     margin: 0;
-                    transform: translateX(-30px); 
+                    transform: translateX(-20px);
                     opacity: 0;
-                    transition: all 0.5s ease 0.1s;
+                    transition: all 0.4s ease 0.1s;
                 }
 
                 h3 {
                     color: #1b1b1b;
                     font-size: 18px;
-                    font-weight: 700;
+                    font-weight: 800;
                     margin: 5px 0 0 0;
-                    transform: translateX(30px); 
+                    transform: translateX(20px);
                     opacity: 0;
-                    transition: all 0.5s ease 0.1s;
+                    transition: all 0.4s ease 0.1s;
                 }
 
                 :host-context(.portfolio-item:hover) p,
@@ -76,14 +74,13 @@ class PortfolioOverlay extends HTMLElement {
                     border-radius: 5px;
                     text-decoration: none;
                     font-size: 20px;
-                    margin-left: 15px;
-                    transform: scale(0.5);
+                    transform: translateX(40px);
                     opacity: 0;
                     transition: all 0.4s ease 0.2s;
                 }
 
                 :host-context(.portfolio-item:hover) .portfolio-link-icon {
-                    transform: scale(1);
+                    transform: translateX(0);
                     opacity: 1;
                 }
             </style>

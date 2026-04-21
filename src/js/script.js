@@ -1,37 +1,17 @@
-// 1. Função de Scroll da Navbar
+// Função de Scroll da Navbar
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('sticky-active');
-    } else {
-        navbar.classList.remove('sticky-active');
+    if (navbar) {
+        window.scrollY > 50 ? navbar.classList.add('sticky-active') : navbar.classList.remove('sticky-active');
     }
 }
 
-window.addEventListener('scroll', handleNavbarScroll, () => {
-    
-    //Efeito de Rotação dos Ícones dos Cards de Serviços
-    const icons = document.querySelectorAll('service-card');
-
-    icons.forEach(card => {
-        const shadow  = card.shadowRoot;
-
-        if(shadow) {
-            const iconDiv = shadow.querySelector('.services-icon');
-
-            const rotation = (window.scrollY / 10) % 360;
-
-            iconDiv.style.transform = rotate(${rotation}deg);
-        }
-    
-    });
-});
-
+window.addEventListener('scroll', handleNavbarScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Partículas (Densidade média: 50)
-    if (document.getElementById('particles-js')) {
+    
+    if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
         particlesJS("particles-js", {
             particles: {
                 number: { value: 60, density: { enable: true, value_area: 800 } },
@@ -55,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Efeito Tilt na Imagem da Hero Section
+    
     const bannerImg = document.querySelector(".banner-image");
     if (bannerImg && typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(bannerImg, {
@@ -65,6 +45,32 @@ document.addEventListener('DOMContentLoaded', () => {
             "max-glare": 0.3,
         });
     }
+
+    // Filtro das Imagens no Portfólio 
+    const filterButtons = document.querySelectorAll('.filter');
+    const portfolioItems = document.querySelectorAll('.portfolio-grid-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            
+            const currentActive = document.querySelector('.filter-active');
+            if (currentActive) currentActive.classList.remove('filter-active');
+            button.classList.add('filter-active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                
+                if (filterValue === 'all' || itemCategory === filterValue) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        });
+    });
 
     handleNavbarScroll();
 });
