@@ -13,84 +13,112 @@ class PortfolioOverlay extends HTMLElement {
             <style>
                 :host {
                     position: absolute;
-                    z-index: 2;
-                    left: 10px;
-                    right: 10px;
-                    bottom: -20px;
-                    padding: 15px 20px;
+                    z-index: 5;
+                    left: 15px;
+                    right: 15px;
+                    bottom: -15px; 
+                    display: flex;
+                    align-items: stretch;
+                    background: #ffffff;
                     border-radius: 5px;
-                    background-color: #ffffff;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
                     opacity: 0;
                     visibility: hidden;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    box-sizing: border-box;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    font-family: 'Dosis', sans-serif;
+                    min-height: 100px; /* Altura aumentada para dar mais espaço */
                 }
 
                 :host-context(.portfolio-item:hover) {
-                    bottom: 15px;
+                    bottom: 20px;
                     opacity: 1;
                     visibility: visible;
                 }
 
-                .info { overflow: hidden; flex: 1; }
+                .card-content {
+                    flex: 1;
+                    padding: 20px 25px; 
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    justify-content: center;
+                    overflow: hidden;
+                }
 
-                p {
-                    color: #7b68ee;
-                    font-size: 14px;
+                .card-tag {
+                    font-size: 13px; 
                     font-weight: 700;
-                    margin: 0;
-                    transform: translateX(-20px);
+                    color: #7b68ee;
+                    text-transform: uppercase;
+                    letter-spacing: 0.8px;
+                    transform: translateX(-30px);
                     opacity: 0;
-                    transition: all 0.4s ease 0.1s;
+                    transition: all 0.5s ease 0.1s;
                 }
 
-                h3 {
-                    color: #1b1b1b;
-                    font-size: 18px;
+                .card-title {
+                    font-size: 22px; 
                     font-weight: 800;
-                    margin: 5px 0 0 0;
-                    transform: translateX(20px);
+                    color: #1b1b1b;
+                    line-height: 1.2;
+                    transform: translateX(30px);
                     opacity: 0;
-                    transition: all 0.4s ease 0.1s;
+                    transition: transform 0.5s ease 0.15s, opacity 0.5s ease 0.15s, color 0.3s ease;
                 }
 
-                :host-context(.portfolio-item:hover) p,
-                :host-context(.portfolio-item:hover) h3 {
+                /* Mudança de cor no hover do portfólio */
+                :host-context(.portfolio-item:hover) .card-title {
+                    color: #7b68ee; 
                     transform: translateX(0);
                     opacity: 1;
                 }
 
-                .portfolio-link-icon {
-                    background-color: #7b68ee;
-                    color: white;
-                    width: 45px;
-                    height: 45px;
+                .card-arrow {
+                    width: 65px; /* Seta maior para acompanhar a altura */
+                    background: #7b68ee;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 5px;
                     text-decoration: none;
-                    font-size: 20px;
-                    transform: translateX(40px);
+                    transform: translateX(50px);
                     opacity: 0;
-                    transition: all 0.4s ease 0.2s;
+                    transition: all 0.5s ease 0.2s, background 0.3s ease;
                 }
 
-                :host-context(.portfolio-item:hover) .portfolio-link-icon {
+                :host-context(.portfolio-item:hover) .card-tag,
+                :host-context(.portfolio-item:hover) .card-arrow {
                     transform: translateX(0);
                     opacity: 1;
                 }
+
+                .card-arrow:hover {
+                    background: #6a56e0;
+                }
+
+                .card-arrow svg {
+                    width: 24px;
+                    height: 24px;
+                    stroke: #ffffff;
+                    stroke-width: 2.5;
+                    fill: none;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                }
             </style>
             
-            <div class="info">
-                <p>${category}</p>
-                <h3>${title}</h3>
+            <div class="card-content">
+                <span class="card-tag">${category}</span>
+                <span class="card-title">${title}</span>
             </div>
-            <a href="${link}" class="portfolio-link-icon">→</a>
+            <a href="${link}" class="card-arrow">
+                <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         `;
     }
 }
+
 customElements.define('portfolio-overlay', PortfolioOverlay);
