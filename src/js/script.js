@@ -57,9 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtro das Imagens no Portfólio 
     const filterButtons = document.querySelectorAll('.filter');
     const portfolioItems = document.querySelectorAll('.portfolio-grid-item');
+    const portfolioContainer = document.querySelector('.portfolio-container');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            
+            const currentHeight = portfolioContainer.offsetHeight;
+            portfolioContainer.style.minHeight = `${currentHeight}px`;
+
             const currentActive = document.querySelector('.filter-active');
             if (currentActive) currentActive.classList.remove('filter-active');
             button.classList.add('filter-active');
@@ -68,12 +73,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             portfolioItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
+                
+                item.classList.remove('show');
+
                 if (filterValue === 'all' || itemCategory === filterValue) {
                     item.classList.remove('hide');
+                    
+                    setTimeout(() => {
+                        item.classList.add('show');
+                    }, 50);
                 } else {
                     item.classList.add('hide');
                 }
             });
+
+            
+            setTimeout(() => {
+                portfolioContainer.style.minHeight = 'auto';
+            }, 500);
         });
     });
 
