@@ -3,13 +3,18 @@ class ServiceCardComponent extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         
-        const iconClass = this.getAttribute('icon') || 'flaticon-development';
+        const iconClass = this.getAttribute('icon') || 'bi bi-gear'; // Fallback para Bootstrap Icon
         const title = this.getAttribute('title') || 'Service Title';
 
         this.shadowRoot.innerHTML = `
             <style>
-            @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
-            @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+               
+                @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+                @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+                
+                
+                @import url("../../assets/flaticon.css");
+
                 :host {
                     display: block;
                     margin-bottom: 30px;
@@ -34,38 +39,29 @@ class ServiceCardComponent extends HTMLElement {
                 .services-icon {
                     width: 70px;
                     height: 70px;
-                    line-height: 70px;
-                    display: flex; 
-                    align-items: center;
-                    justify-content: center;
                     background-color: #fff4f0; 
                     color: #ff6a28; 
                     font-size: 35px;
-                    margin: 0 0 20px 0; 
+                    margin-bottom: 20px; 
                     border-radius: 5px;
                     transition: 0.5s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                
+                .services-icon i {
+                    display: inline-block;
+                    line-height: 1;
                 }
 
-                
                 .single-services-item:hover .services-icon {
                     transform: rotateY(180deg);
-                    background-color: #ff6a28;
-                    color: #fff;
                 }
 
-                h3 {
-                    font-size: 24px;
-                    margin-bottom: 15px;
-                    font-weight: 700;
-                    color: #404040;
-                }
-
-                p {
-                    color: #666;
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                    line-height: 1.6;
-                }
+                h3 { font-size: 24px; margin-bottom: 15px; font-weight: 700; color: #404040; }
+                p { color: #666; font-size: 16px; margin-bottom: 20px; line-height: 1.6; }
 
                 .read-more {
                     display: inline-block;
@@ -75,18 +71,11 @@ class ServiceCardComponent extends HTMLElement {
                     font-size: 15px;
                     transition: 0.6s;
                 }
-
-                .read-more:hover i {
-                    padding-left: 5px;
-                }
-                
             </style>
 
             <div class="single-services-item">
                 <div class="services-icon">
-                    <slot name="icon">
-                        <i class="${iconClass}"></i>
-                    </slot>
+                    <i class="${iconClass}"></i>
                 </div>
                 <h3>${title}</h3>
                 <p><slot name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua</slot></p>
