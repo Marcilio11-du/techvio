@@ -44,7 +44,7 @@
     cursor: pointer;
 }
 
-subscribe-area {
+.subscribe-area {
     border-bottom: 1px solid rgba(255, 255, 255, 0.313);
 }
 

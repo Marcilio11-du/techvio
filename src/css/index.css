@@ -261,7 +261,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    opacity: 0.6;
+    background-color: #1f1f54;
     z-index: -1;
 }
 
@@ -302,16 +303,16 @@ p {
 }
 
 
-
 .hire-section {
     position: relative;
     padding: 100px 0;
-    background-image: url('../../assets/banner-bg-3.jpg'); 
+    background-image: url('../../assets/banner-bg.jpg'); 
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll; 
     z-index: 1;
+    text-align: center; 
 }
 
 
@@ -322,7 +323,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: #1f1f54;
+    opacity: 0.6;
     z-index: -1;
 }
 
@@ -331,14 +333,14 @@ p {
 }
 
 .hire-content h2 {
-    color: #fff;
+    color: white;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
 }
 
 .hire-content .sub-title {
-    color: #7b68ee;
+    color: #ff9800;
     display: block;
     margin-bottom: 10px;
     text-transform: uppercase;
