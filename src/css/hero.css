@@ -1,90 +1,112 @@
+/* --- HERO SECTION DEFINITIVA --- */
+
 .home-section.index-1 {
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
-    height: 800px;
     min-height: 100vh;
     overflow: hidden;
-    /* Gradiente exato do Techvio */
-    background: linear-gradient(rgb(55, 11, 111), rgb(0, 66, 155), rgb(0, 109, 186), rgb(0, 149, 206), rgb(45, 188, 220));
+    /* Gradiente Vertical Consolidado */
+    background: linear-gradient(to bottom, 
+        rgb(55, 11, 111) 0%, 
+        rgb(0, 66, 155) 25%, 
+        rgb(0, 109, 186) 50%, 
+        rgb(0, 149, 206) 75%, 
+        rgb(45, 188, 220) 100%);
 }
 
-.main-banner-content h1 {
-    font-family: 'Dosis', sans-serif;
-    font-size: 65px;
-    color: #ffffff;
-    line-height: 1.2;
-}
-
-.main-banner-content p {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 500;
-}
-
+/* 1. Camadas de Fundo (Sem interatividade) */
 #particles-js {
     position: absolute;
-    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    z-index: 0; 
+    pointer-events: none !important;
 }
 
-/* Alinhamento de Tabela para centralização vertical perfeita */
-.d-table {
+.d-table, .d-table-cell {
     display: table !important;
     width: 100%;
     height: 100%;
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Impede que a tabela invisível bloqueie o mouse */
 }
 
-.d-table-cell {
-    display: table-cell !important;
-    vertical-align: middle;
+/* 2. Conteúdo e Interatividade (Desktop Priority) */
+.main-banner-content {
+    position: relative;
+    z-index: 20 !important; /* Acima de todas as camadas fantasmas */
+    pointer-events: auto;
 }
 
-/* Conteúdo do Banner */
-.main-banner-content h1 {
+.social-icon-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    pointer-events: auto;
+}
+
+.social-icon-list li a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
     color: #ffffff;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+.social-icon-list li a:hover {
+    background-color: #7b68ee;
+    border-color: #7b68ee;
+    transform: translateY(-5px);
+}
+
+/* 3. Botões e Tipografia */
+.main-banner-content h1 {
+    font-family: 'Dosis', sans-serif;
     font-size: 60px;
     font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
 .main-banner-content p {
+    font-family: 'Dosis', sans-serif;
     color: #ffffff;
-    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 35px;
     opacity: 0.9;
 }
 
-/* Redes Sociais */
-.social-icon-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
+.banner-btn {
     display: flex;
+    align-items: center;
     gap: 15px;
+    pointer-events: auto;
 }
 
-.social-icon-list li a {
-    color: #ffffff;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.social-icon-list li a:hover {
-    color: var(--techvio-main);
-}
-
-/* Imagem e Shape */
-.home-section .banner-image {
+/* 4. Imagem e Efeitos */
+.banner-image {
+    position: relative;
+    z-index: 10;
     text-align: center;
-    padding-top: 50px;
-    cursor: pointer;
+    pointer-events: auto;
 }
 
-.home-section .banner-image img {
+.banner-image img {
     max-width: 100%;
     height: auto;
 }
@@ -94,10 +116,47 @@
     bottom: -2px;
     left: 0;
     width: 100%;
-    line-height: 0;
     z-index: 2;
+    line-height: 0;
+    pointer-events: none;
 }
 
 .creative-shape img {
     width: 100%;
+}
+
+/* --- AJUSTES MOBILE / TABLET --- */
+
+@media (max-width: 991px) {
+    .home-section.index-1 {
+        height: auto;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .main-banner-content {
+        text-align: center;
+    }
+
+    .social-icon-list {
+        justify-content: center;
+    }
+
+    .banner-btn {
+        justify-content: center;
+        flex-direction: row; /* Mantém em linha como solicitado */
+        flex-wrap: wrap; 
+    }
+
+    .main-banner-content h1 {
+        font-size: 38px;
+    }
+
+    .banner-image {
+        margin-top: 50px;
+    }
+
+    .banner-image img {
+        max-width: 85%;
+    }
 }

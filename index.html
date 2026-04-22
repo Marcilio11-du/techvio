@@ -32,76 +32,79 @@
 
     <!-- Start Header Section -->
     <header class="header-area">
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/logo.png" alt="Techvio Logo" width="140">
+                    <img src="assets/logo.png" class="logo-white" alt="logo" width="140">
+                    <img src="assets/logo-black.png" class="logo-black" alt="logo" width="140">
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler custom-hamburger collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav ms-auto">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
-        <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#">Home One</a></li>
-            <li><a class="dropdown-item" href="#">Home Two</a></li>
-            <li><a class="dropdown-item" href="#">Home Three</a></li>
-        </ul>
-    </li>
+                    <ul class="navbar-nav ms-auto me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">Home One</a></li>
+                                <li><a class="dropdown-item" href="index-2.html">Home Two</a></li>
+                                <li><a class="dropdown-item" href="index-3.html">Home Three</a></li>
+                                <li><a class="dropdown-item" href="index-4.html">Home Four</a></li>
+                                <li><a class="dropdown-item" href="index-5.html">Home Five</a></li>
+                                <li><a class="dropdown-item" href="index-6.html">Home Six</a></li>
+                                <li><a class="dropdown-item" href="index-7.html">Home Seven</a></li>
+                                <li><a class="dropdown-item" href="index-8.html">Home Eight</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="services.html">Services 1</a></li>
+                                <li><a class="dropdown-item" href="services-2.html">Services 2</a></li>
+                                <li><a class="dropdown-item" href="services-3.html">Services 3</a></li>
+                                <li><a class="dropdown-item" href="services-4.html">Services 4</a></li>
+                                <li><a class="dropdown-item" href="services-5.html">Services 5</a></li>
+                                <li><a class="dropdown-item" href="services-6.html">Services 6</a></li>
+                                <li><a class="dropdown-item" href="single-services.html">Services Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Portfolio</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="portfolio.html">Portfolio</a></li>
+                                <li><a class="dropdown-item" href="single-portfolio.html">Portfolio Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="team.html">Team</a></li>
+                                <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="error-404.html">404 Error</a></li>
+                                <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+                                <li><a class="dropdown-item" href="terms-condition.html">Terms & Conditions</a></li>
+                                <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog.html">Blog Grid</a></li>
+                                <li><a class="dropdown-item" href="blog-2.html">Blog Right Sidebar</a></li>
+                                <li><a class="dropdown-item" href="single-blog.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
 
-    <li class="nav-item">
-        <a class="nav-link" href="#about">About Us</a>
-    </li>
-
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-        <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#">Services Style 1</a></li>
-            <li><a class="dropdown-item" href="#">Services Style 2</a></li>
-            <li><a class="dropdown-item" href="#">Service Details</a></li>
-        </ul>
-    </li>
-
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Portfolio</a>
-        <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#">Portfolio</a></li>
-            <li><a class="dropdown-item" href="#">Portfolio Details</a></li>
-        </ul>
-    </li>
-
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
-        <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#">Team</a></li>
-            <li><a class="dropdown-item" href="#">Pricing</a></li>
-            <li><a class="dropdown-item" href="#">FAQ</a></li>
-            <li><a class="dropdown-item" href="#">404 Error</a></li>
-            <li><a class="dropdown-item" href="#">Coming Soon</a></li>
-        </ul>
-    </li>
-
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
-        <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#">Blog Grid</a></li>
-            <li><a class="dropdown-item" href="#">Blog Left Sidebar</a></li>
-            <li><a class="dropdown-item" href="#">Blog Right Sidebar</a></li>
-            <li><a class="dropdown-item" href="#">Blog Details</a></li>
-        </ul>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-    </li>
-</ul>
-
-                    <div class="other-options ms-lg-4 d-flex justify-content-center">
-                        <primary-button-component text="Get It Support"></primary-button-component>
+                    <div class="other-options">
+                        <primary-button text="Get It Support" href="contact.html"></primary-button>
                     </div>
                 </div>
             </div>
@@ -125,14 +128,13 @@
                                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                 </ul>
-                                <h1>Best IT Solutions & Business Services for Your Company</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor magna aliqua ipsum is simply dummy text of the printing.</p>
                                 
-                                <div class="banner-btn">
-                                    <primary-button-component text="Our Services"></primary-button-component>
-                                    <div class="ms-3 d-inline-block">
-                                        <secondary-button-component text="Contact Us"></secondary-button-component>
-                                    </div>
+                                <h1>Best IT Solutions & Business Services for Your Company</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor magna aliqua ipsum is simply dummy text of the printing</p>
+                                
+                                <div class="banner-btn d-flex align-items-center gap-3">
+                                    <primary-button text="Our Services" href="#services"></primary-button>
+                                    <primary-button text="Contact Us" variant="outline" href="#contact"></primary-button>
                                 </div>
                             </div>
                         </div>

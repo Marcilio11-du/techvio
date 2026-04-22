@@ -74,26 +74,21 @@ class PrimaryButton extends HTMLElement {
     }
 
     initAnimation() {
-        const btn = this.shadowRoot.querySelector('.btn');
-        const span = this.shadowRoot.querySelector('span');
+    const btn = this.shadowRoot.querySelector('.btn');
+    const span = this.shadowRoot.querySelector('span');
 
-        btn.addEventListener('mouseenter', (e) => {
-            const parentOffset = btn.getBoundingClientRect();
-            const relX = e.clientX - parentOffset.left;
-            const relY = e.clientY - parentOffset.top;
-            
-            span.style.top = relY + 'px';
-            span.style.left = relX + 'px';
-        });
+    const updatePos = (e) => {
+        const rect = btn.getBoundingClientRect();
+        // Calculamos a posição relativa ao botão, ignorando scrolls da página
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        span.style.left = `${x}px`;
+        span.style.top = `${y}px`;
+    };
 
-        btn.addEventListener('mouseout', (e) => {
-            const parentOffset = btn.getBoundingClientRect();
-            const relX = e.clientX - parentOffset.left;
-            const relY = e.clientY - parentOffset.top;
-            
-            span.style.top = relY + 'px';
-            span.style.left = relX + 'px';
-        });
-    }
+    btn.addEventListener('mouseenter', updatePos);
+    btn.addEventListener('mouseleave', updatePos);
+}
 }
 customElements.define('primary-button', PrimaryButton);

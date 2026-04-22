@@ -1,106 +1,120 @@
-/* --- CONFIGURAÇÃO DE FONTE --- */
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap');
-
-:root {
-    --techvio-main: #7b68ee; 
-    --techvio-dark: #404040;
-    --font-primary: 'Dosis', sans-serif;
-}
-
-body {
-    font-family: var(--font-primary);
-}
-
+/* --- Base da Navbar --- */
 .navbar {
     padding: 20px 0;
-    transition: all 0.4s ease-in-out;
-    background-color: transparent !important;
-    font-family: var(--font-primary);
+    transition: all 0.4s ease;
+    z-index: 999;
 }
 
+.navbar.fixed-top {
+    position: fixed;
+}
+
+/* Estado Sticky (Scroll) */
 .navbar.sticky-active {
     background-color: #ffffff !important;
-    padding: 15px 0 !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 12px 0;
 }
 
-/* --- ALINHAMENTO DOS LINKS --- */
-.navbar-nav {
-    text-align: center;
-}
+/* Lógica de Troca de Logos */
+.logo-black { display: none !important; }
+.navbar.sticky-active .logo-white { display: none !important; }
+.navbar.sticky-active .logo-black { display: block !important; }
 
-.navbar-light .navbar-nav .nav-link {
-    color: #ffffff; /* Branco sobre o gradiente */
+/* Links */
+.nav-link {
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 16px;
-    padding: 10px 15px;
+    padding: 10px 15px !important;
     transition: 0.3s;
-    display: inline-block;
 }
 
-/* Cor do texto quando o menu fica branco */
-.navbar.sticky-active .navbar-nav .nav-link {
-    color: var(--techvio-dark) !important;
+.navbar.sticky-active .nav-link {
+    color: #404040 !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover, 
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--techvio-main) !important;
+.nav-link:hover, .nav-link.active {
+    color: #7b68ee !important;
 }
 
-/* --- DROPDOWNS (DESKTOP) --- */
+/* --- Menu Hambúrguer Customizado (Spans) --- */
+.custom-hamburger {
+    border: none;
+    padding: 0;
+    width: 35px;
+    height: 30px;
+    position: relative;
+    background: transparent;
+}
+
+.custom-hamburger .icon-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ffffff; /* Branco no topo */
+    border-radius: 3px;
+    transition: all 0.3s;
+    position: absolute;
+}
+
+.navbar.sticky-active .custom-hamburger .icon-bar {
+    background: #404040; /* Escuro no scroll */
+}
+
+.top-bar { top: 0; }
+.middle-bar { top: 10px; }
+.bottom-bar { top: 20px; }
+
+/* Animação do "X" quando aberto */
+.custom-hamburger:not(.collapsed) .top-bar { transform: rotate(45deg); top: 10px; }
+.custom-hamburger:not(.collapsed) .middle-bar { opacity: 0; }
+.custom-hamburger:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 10px; }
+
+/* --- Dropdown Style (Desktop Popup) --- */
 @media (min-width: 992px) {
-    .nav-item.dropdown .dropdown-menu {
+    .dropdown-menu {
         display: block;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(20px) translateX(-50%);
-        transition: all 0.3s ease-in-out;
-        pointer-events: none;
-    }
-
-    .nav-item.dropdown:hover > .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) translateX(-50%);
-        pointer-events: auto;
-    }
-
-    .dropdown-menu {
-        position: absolute;
-        left: 50% !important;
-        text-align: center;
+        transform: translateY(20px);
+        transition: 0.3s;
+        border: none;
         border-radius: 5px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        border: none;
         padding: 10px 0;
-        background: #fff;
     }
-
-    .dropdown-toggle::after {
-        display: inline-block;
-        margin-left: 5px;
-        vertical-align: middle;
-        content: "";
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-bottom: 0;
-        border-left: 0.3em solid transparent;
+    .nav-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between; 
+        align-items: center;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
     }
 }
 
-/* --- MENU RESPONSIVO (MOBILE) --- */
+/* --- Mobile Menu Fix --- */
 @media (max-width: 991px) {
-    .navbar-nav { text-align: left; }
-    .navbar-nav .nav-item { border-bottom: 1px solid #f0f0f0; position: relative; }
-    .navbar-nav .nav-link {
-        color: var(--techvio-dark) !important; /* No mobile geralmente o fundo expandido é branco */
-        padding: 15px 0 !important;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .navbar-collapse {
+        background: #ffffff;
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .navbar-collapse { background: #fff; padding: 10px 20px; }
-    .dropdown-toggle::after { content: '+'; border: none; font-size: 22px; margin-left: auto; }
+    .navbar .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-link { color: #404040 !important; border-bottom: 1px solid #f0f0f0; }
+    .other-options { margin-top: 15px; text-align: center; }
 }

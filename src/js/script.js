@@ -1,8 +1,10 @@
 // Função de Scroll da Navbar
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.scrollY > 50 ? navbar.classList.add('sticky-active') : navbar.classList.remove('sticky-active');
+    if (window.scrollY > 50) {
+        navbar.classList.add('sticky-active');
+    } else {
+        navbar.classList.remove('sticky-active');
     }
 }
 
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 move: { enable: true, speed: 6, direction: "none", random: false, straight: false }
             },
             interactivity: {
+                "detect_on": "window",
                 events: { onhover: { enable: true, mode: "grab" } }
             },
             retina_detect: true
@@ -106,23 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Seleção única de elementos para poupar memória
+    // Lógica para o botão Go Top
     const goTopBtn = document.getElementById('backToTop');
 
-    if (goTopBtn) {
-        window.addEventListener('scroll', () => {
-            // Usar 400 ou 500 costuma ser mais amigável que 600 em telas menores
-            const isVisible = window.scrollY > 500;
-            goTopBtn.classList.toggle('active', isVisible);
-        });
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            goTopBtn.classList.add('active');
+        } else {
+            goTopBtn.classList.remove('active');
+        }
+    });
 
-        goTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    goTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 
     handleNavbarScroll();
 });
