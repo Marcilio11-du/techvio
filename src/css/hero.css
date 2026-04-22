@@ -7,7 +7,6 @@
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
-    /* Gradiente Vertical Consolidado */
     background: linear-gradient(to bottom, 
         rgb(55, 11, 111) 0%, 
         rgb(0, 66, 155) 25%, 
@@ -16,7 +15,7 @@
         rgb(45, 188, 220) 100%);
 }
 
-/* 1. Camadas de Fundo (Sem interatividade) */
+/* Camadas de Fundo  */
 #particles-js {
     position: absolute;
     top: 0;
@@ -33,13 +32,13 @@
     height: 100%;
     position: relative;
     z-index: 1;
-    pointer-events: none; /* Impede que a tabela invisível bloqueie o mouse */
+    pointer-events: none; 
 }
 
-/* 2. Conteúdo e Interatividade (Desktop Priority) */
+/* Conteúdo e Interatividade  */
 .main-banner-content {
     position: relative;
-    z-index: 20 !important; /* Acima de todas as camadas fantasmas */
+    z-index: 20 !important; 
     pointer-events: auto;
 }
 
@@ -69,10 +68,17 @@
 .social-icon-list li a:hover {
     background-color: #7b68ee;
     border-color: #7b68ee;
-    transform: translateY(-5px);
+}
+.dropdown-item {
+    transition: all 0.3s ease;
 }
 
-/* 3. Botões e Tipografia */
+.dropdown-item:hover {
+    background-color: #7b68ee !important;
+    color: #ffffff !important;
+}
+
+/*  Botões e Tipografia */
 .main-banner-content h1 {
     font-family: 'Dosis', sans-serif;
     font-size: 60px;
@@ -98,7 +104,7 @@
     pointer-events: auto;
 }
 
-/* 4. Imagem e Efeitos */
+/* Imagem e Efeitos */
 .banner-image {
     position: relative;
     z-index: 10;
@@ -144,7 +150,7 @@
 
     .banner-btn {
         justify-content: center;
-        flex-direction: row; /* Mantém em linha como solicitado */
+        flex-direction: row; 
         flex-wrap: wrap; 
     }
 

@@ -5,6 +5,7 @@ class ServiceCardComponent extends HTMLElement {
         
         const iconClass = this.getAttribute('icon') || 'bi bi-gear'; // Fallback para Bootstrap Icon
         const title = this.getAttribute('title') || 'Service Title';
+        const icon = this.getAttribute('iconSrc');
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -39,8 +40,6 @@ class ServiceCardComponent extends HTMLElement {
                 .services-icon {
                     width: 70px;
                     height: 70px;
-                    background-color: #fff4f0; 
-                    color: #ff6a28; 
                     font-size: 35px;
                     margin-bottom: 20px; 
                     border-radius: 5px;
@@ -75,7 +74,7 @@ class ServiceCardComponent extends HTMLElement {
 
             <div class="single-services-item">
                 <div class="services-icon">
-                    <i class="${iconClass}"></i>
+                    <img src="${icon}" alt="${title} Icon" style="width: 50px; height: 50px;">
                 </div>
                 <h3>${title}</h3>
                 <p><slot name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua</slot></p>

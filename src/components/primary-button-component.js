@@ -31,13 +31,12 @@ class PrimaryButton extends HTMLElement {
                     box-shadow: 0 7px 25px rgba(123, 104, 238, 0.25);
                 }
 
-                /* Variante Roxa */
                 .primary {
                     background-color: #7b68ee;
                     color: #ffffff;
                 }
 
-                /* Variante Branca (Outline) */
+                
                 .outline {
                     background-color: #ffffff;
                     color: #7b68ee;
@@ -79,7 +78,7 @@ class PrimaryButton extends HTMLElement {
 
     const updatePos = (e) => {
         const rect = btn.getBoundingClientRect();
-        // Calculamos a posição relativa ao botão, ignorando scrolls da página
+        
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         

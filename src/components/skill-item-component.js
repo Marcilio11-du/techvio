@@ -37,7 +37,7 @@ class SkillItemComponent extends HTMLElement {
                     height: 100%;
                     background-color: #7b68ee;
                     border-radius: 5px;
-                    width: 0; /* Começa em 0 */
+                    width: 0; 
                     transition: width 1.2s cubic-bezier(0.1, 0.5, 0.5, 1);
                 }
             </style>

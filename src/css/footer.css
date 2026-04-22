@@ -8,7 +8,7 @@
 
 .ptb-100 { padding: 100px 0; }
 
-/* --- Newsletter (Botão Laranja no Hover) --- */
+/* --- Newsletter  --- */
 .newsletter-form {
     position: relative;
 }
@@ -48,7 +48,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.313);
 }
 
-/* --- Social Icons (Inversão de Cores) --- */
+/* --- Social Icons --- */
 .footer-social {
     list-style: none;
     padding: 0;

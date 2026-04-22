@@ -13,30 +13,30 @@
     opacity: 1;
 }
 
-/* Efeito de Portas (Fundo Roxo abrindo na horizontal) */
+
 .preloader::before,
 .preloader::after {
     content: '';
     position: absolute;
     top: 0;
-    width: 50%; /* Metade da largura cada um */
+    width: 50%; 
     height: 100%;
-    background-color: #7b68ee; /* Roxo Techvio */
+    background-color: #7b68ee; 
     transition: 0.8s all cubic-bezier(0.77, 0, 0.175, 1);
     z-index: -1;
 }
 
-.preloader::before { left: 0; }  /* Lado esquerdo */
-.preloader::after { right: 0; }  /* Lado direito */
+.preloader::before { left: 0; }  
+.preloader::after { right: 0; }  
 
-/* Estado Desativado (Abre para os lados) */
+
 .preloader.preloader-deactivate {
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0s 0.8s, visibility 0s 0.8s; /* Garante que desapareça só após a animação */
+    transition: opacity 0s 0.8s, visibility 0s 0.8s; 
 }
 
-/* Animação das portas fugindo para as laterais */
+
 .preloader.preloader-deactivate::before { 
     transform: translateX(-100%); 
 }
@@ -44,7 +44,7 @@
     transform: translateX(100%); 
 }
 
-/* --- O Cubo e a Sombra (Mantêm-se iguais para garantir o movimento) --- */
+
 .loader {
     position: relative;
     width: 50px;
@@ -53,7 +53,7 @@
 }
 
 .preloader.preloader-deactivate .loader {
-    opacity: 0; /* O cubo some antes das portas abrirem totalmente */
+    opacity: 0; 
 }
 
 .loader .box {

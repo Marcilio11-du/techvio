@@ -27,7 +27,7 @@ class PortfolioOverlay extends HTMLElement {
                     visibility: hidden;
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     font-family: 'Dosis', sans-serif;
-                    min-height: 100px; /* Altura aumentada para dar mais espaço */
+                    min-height: 100px; 
                 }
 
                 :host-context(.portfolio-item:hover) {
@@ -67,7 +67,7 @@ class PortfolioOverlay extends HTMLElement {
                     transition: transform 0.5s ease 0.15s, opacity 0.5s ease 0.15s, color 0.3s ease;
                 }
 
-                /* Mudança de cor no hover do portfólio */
+                
                 :host-context(.portfolio-item:hover) .card-title {
                     color: #7b68ee; 
                     transform: translateX(0);
@@ -75,7 +75,7 @@ class PortfolioOverlay extends HTMLElement {
                 }
 
                 .card-arrow {
-                    width: 65px; /* Seta maior para acompanhar a altura */
+                    width: 65px; 
                     background: #7b68ee;
                     display: flex;
                     align-items: center;

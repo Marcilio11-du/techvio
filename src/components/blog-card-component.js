@@ -95,7 +95,7 @@ class BlogCardComponent extends HTMLElement {
                     margin-bottom: 15px;
                 }
 
-                /* A Animação da Seta que pediste */
+                
                 .read-more {
                     color: #7b68ee;
                     font-size: 16px;
@@ -108,12 +108,12 @@ class BlogCardComponent extends HTMLElement {
 
                 .read-more i {
                     font-size: 24px;
-                    margin-left: 5px; /* Começa com um pequeno espaço */
+                    margin-left: 5px; 
                     transition: all 400ms ease-out;
                 }
 
                 .blog-single-item:hover .read-more i {
-                    margin-left: 10px; /* A seta aproxima-se/afasta-se suavemente */
+                    margin-left: 10px; 
                     transform: translateX(3px);
                 }
             </style>

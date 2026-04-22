@@ -62,7 +62,7 @@ p {
     margin: 16px -10px 0 -10px; 
 }
 
-/* Comportamento de Colunas (Desktop e Tablet) */
+/* Comportamento de Colunas  */
 .overview-content .features-list li {
     flex: 0 0 50%;
     max-width: 50%;

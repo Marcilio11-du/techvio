@@ -29,7 +29,7 @@ class SpecificServiceComponent extends HTMLElement {
                     overflow: hidden;
                 }
 
-                /* Animação: Esquerda para Direita */
+                
                 .specific-service::before {
                     content: "";
                     position: absolute;
