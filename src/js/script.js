@@ -9,6 +9,13 @@ function handleNavbarScroll() {
 }
 
 window.addEventListener('scroll', handleNavbarScroll);
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    
+    setTimeout(() => {
+        preloader.classList.add('preloader-deactivate');
+    }, 1000);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     
