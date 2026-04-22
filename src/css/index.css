@@ -366,7 +366,7 @@ p {
 
 .go-top {
     position: fixed;
-    z-index: 999;
+    z-index: 1000; /* Garantir que fica acima de tudo durante a descida */
     bottom: 20px; 
     right: 20px;
     width: 45px;
@@ -375,45 +375,45 @@ p {
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
-    line-height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
    
+    /* ESTADO INICIAL: Lá no topo (escondido atrás ou acima do header) */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100px); 
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateY(-100vh); /* Faz com que ele caia lá de cima */
+    
+    /* Transição mais lenta para vermos a "viagem" do botão */
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
     box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
 }
 
 .go-top.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0); /* Chega ao destino final (bottom: 20px) */
 }
 
+/* --- Efeito Cascata das Setas no Hover --- */
 .go-top i {
     position: absolute;
     transition: 0.4s;
 }
 
-
 .go-top i:last-child {
-    transform: translateY(20px);
+    transform: translateY(25px);
     opacity: 0;
 }
 
-
 .go-top:hover {
-    background-color: #ffb700; 
-    transform: translateY(-5px); 
+    background-color: #ffb700;
+    transform: translateY(-5px); /* Pequeno pulo ao pairar */
 }
 
 .go-top:hover i:first-child {
-    transform: translateY(-20px);
+    transform: translateY(-25px);
     opacity: 0;
 }
 

@@ -106,23 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica para o botão Go Top
+    // Seleção única de elementos para poupar memória
     const goTopBtn = document.getElementById('backToTop');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 600) {
-            goTopBtn.classList.add('active');
-        } else {
-            goTopBtn.classList.remove('active');
-        }
-    });
-
-    goTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (goTopBtn) {
+        window.addEventListener('scroll', () => {
+            // Usar 400 ou 500 costuma ser mais amigável que 600 em telas menores
+            const isVisible = window.scrollY > 500;
+            goTopBtn.classList.toggle('active', isVisible);
         });
-    });
+
+        goTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     handleNavbarScroll();
 });
