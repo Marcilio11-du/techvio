@@ -53,6 +53,7 @@ class ServiceCardComponent extends HTMLElement {
                 .services-icon i {
                     display: inline-block;
                     line-height: 1;
+
                 }
 
                 .single-services-item:hover .services-icon {
@@ -63,12 +64,21 @@ class ServiceCardComponent extends HTMLElement {
                 p { color: #666; font-size: 16px; margin-bottom: 20px; line-height: 1.6; }
 
                 .read-more {
-                    display: inline-block;
+                    display: inline-flex;
+                    align-items: center;
                     color: #3E57D0;
                     text-decoration: none;
                     font-weight: 600;
-                    font-size: 15px;
+                    font-size: 16px;
                     transition: 0.6s;
+                }
+                
+                .read-more i{
+                    font-size: 20px;
+                    transition: transform 0.4s ease;
+                }
+                .read-more:hover i {
+                    transform: translateX(3px);
                 }
             </style>
 
