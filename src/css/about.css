@@ -1,46 +1,67 @@
-.about-area {
+/* --- ABOUT SECTION --- */
+
+.bg-grey {
     background-color: #f7f8f9;
 }
 
+.section-padding {
+    padding: 80px 0;
+}
+
+.sub-title {
+    color: #ff9800;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+/* --- Container da Imagem --- */
 .about-image {
     position: relative;
-    max-width: 100%; 
-    margin-left: 0px;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
 }
 
 .about-image img {
-    border-radius: 5px;
+    border-radius: 10px;
     width: 100%;
     height: auto;
     display: block;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.about-image .years-design {
 
+/* --- Layout Year-Design  --- */
+.years-design {
     position: absolute;
-    right: 0;
-    max-width: 250px;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100%;
+    max-width: 240px;
     background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    border-radius: 5px;
-    border-bottom: 3px solid #ff9800;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 8px;
+    border-bottom: 4px solid #ff9800;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 2;
 }
 
-
-.about-image .years-design h2 {
-    font-size: 60px;
+.years-design h2 {
+    font-size: 55px;
     font-weight: 800;
     line-height: 1;
     margin: 0;
-    color: #404040; 
+    color: #101834;
 }
 
-.about-image .years-design h5 {
-    color: #ff9800;
+.years-design h5 {
+    color: #404040;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -48,22 +69,20 @@
 }
 
 
-@media (max-width: 991px) {
-    .about-image {
-        margin-top: 50px;
-        text-align: center;
-    }
-    .about-image .years-design {
-        right: 0;
-        left: 0;
-        margin: 0 auto;
-        bottom: -20px;
-    }
-}
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .about-image .years-design {
-        left: 75px;
-        bottom: 25px;
+/* --- Ajustes de Responsividade --- */
+@media (max-width: 991px) {
+    .about-content {
+        align-items: left;
+        margin-bottom: 50px;
+    }
+
+    .years-design {
+        max-width: 200px;
+        bottom: 15px; 
+    }
+
+    .years-design h2 {
+        font-size: 45px;
     }
 }
